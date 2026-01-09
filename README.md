@@ -80,6 +80,9 @@ gives the pattern plus a ``1`` prefix. For example,
 Three color arguments are used (any subsequent color specifications
 are ignored). Random colors will be chosen if they are not provided.
 
+See https://en.wikipedia.org/wiki/Lyapunov_fractal for some of 
+the background mathematics.
+
 Escape-Time fractals
 --------------------
 
@@ -88,6 +91,9 @@ To automatically generate a random escape-time fractal, use
 computes only using the x- and y-limits that you specify. 
 To select a particular escape time fractal, you can use the
 ``-ftype`` argument, and then either ``-etf`` or ``-etfa``. 
+Escape-time fractals need at least two colors but can handle
+several. If less than two colors are specified, then six 
+are chosen at random.
 
 The various types are:
 
@@ -111,8 +117,10 @@ $$  a+bi \rightarrow a^2 - b^2 + b + c + (2 a b - a + d) i$$
 
 5. ``-ftype pow <p> <t> <r> <s>`` Mandelbrot with extended power laws
 
-$$ a+bi \rightarrow |a|^p -|b|^t + c + [2 \sgn(a) \sgn(b) 
-|a|^r |b|^s + d] i $$
+$$ a+bi \rightarrow \left|a\right|^p -
+\left|b\right|^t + c + 
+\left[2 ~\mathrm{sgn}(a)~\mathrm{sgn}(b) 
+~\left|a\right|^r~\left|b\right|^s + d\right] i $$
 
 Combining arguments
 -------------------
