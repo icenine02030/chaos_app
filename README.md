@@ -13,7 +13,8 @@ Basic Usage
 
 1. ``/f`` The slash command to obtain a fractal from the Bot library
 2. ``/fract`` The slash command to compute a new fractal
-3. Use ``!info`` to get detailed information on the last fractal displayed. 
+3. Use ``!info`` to get detailed information on the last fractal displayed.
+4. Use ``/help`` to obtain a link to this help file.
 
 Note that both of these slash commands are subject to
 constraints on the server's current computational burden and may be
@@ -82,9 +83,44 @@ are ignored). Random colors will be chosen if they are not provided.
 Escape-Time fractals
 --------------------
 
-To generate a random escape-time fractal, use ``-etfa``. To 
-select a particular escape time fractal, you can use the
-``-ftype`` argument. 
+To automatically generate a random escape-time fractal, use 
+``-etfa``. For more complete control, use ``-etf`` which 
+computes only using the x- and y-limits that you specify. 
+To select a particular escape time fractal, you can use the
+``-ftype`` argument, and then either ``-etf`` or ``-etfa``. 
+
+The various types are:
+
+1. ``-ftype mandel`` the classic Mandelbrot set
+
+$$ z \rightarrow z^2 + c $$
+   
+2. ``-ftype mandel_n <d>`` Mandelbrot mapping with a
+modified (real) exponent
+
+$$ z \rightarrow z^d + c $$
+
+3. ``-ftype mandel_ni <a> <b>`` Mandelbrot mapping with a
+modified (complex) exponent
+
+$$ z \rightarrow z^{a+bi} + c $$
+
+4. ``-ftype twist`` Twisted Mandelbrot mapping
+
+$$  a+bi \rightarrow a^2 - b^2 + b + c + (2 a b - a + d) i$$
+
+5. ``-ftype pow <p> <t> <r> <s>`` Mandelbrot with extended power laws
+
+$$ a+bi \rightarrow |a|^p -|b|^t + c + [2 \sgn(a) \sgn(b) 
+|a|^r |b|^s + d] i $$
+
+Combining arguments
+-------------------
+
+Often, you may want to combine the arguments above, specifying
+the location (using ``-x0``, ``-x1``, etc.), the colors 
+(e.g. ``-color blue``, etc.) and the fractal specification
+(e.g. ``-ftype mandel -etf``) to generate the image you want.
 
 Terms of Service
 -----------------
