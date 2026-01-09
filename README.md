@@ -1,6 +1,9 @@
 ChaosApp Discord Bot
 ====================
 
+This Bot is currently in public beta. Please let me know if you have any
+problems and I will try to address them quickly. 
+
 Basic Usage
 -----------
 
