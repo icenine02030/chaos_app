@@ -2,7 +2,7 @@ ChaosApp Discord Bot
 ====================
 
 This Bot is currently in public beta. Please let me know if you have any
-problems and I will try to address them quickly. 
+problems (either on Discord or via an issue here) and I will try to address them quickly. 
 
 Basic Usage
 -----------
@@ -53,8 +53,23 @@ To compute a random strange attractor fractal, use ``-sta``. To
 select a particular strange attractor, use ``-st`` followed by the
 12 numerical values, ``<a1> <a2> ... <a6> <b1> ... <b6>``.
 
-Two color arguments are required (any subsequent color specifications
+Two color arguments are used (any subsequent color specifications
 are ignored). Random colors will be chosen if they are not provided. 
+
+Lyapunov fractals
+-----------------
+
+To compute a random Lyapunov fractal, use ``-lyapa``. To select 
+a particular pattern, use ``-lyap <integer>``, where the user
+specifies the decimal integer for which the binary representation
+gives the pattern plus a ``1`` prefix. For example, 
+
+- 5 (decimal), 101 (binary), AB (pattern)
+- 18 (decimal), 10010 (binary), AABA (pattern)
+- 49 (decimal), 110001 (binary), BAAAB (pattern)
+
+Three color arguments are used (any subsequent color specifications
+are ignored). Random colors will be chosen if they are not provided.
 
 Terms of Service
 -----------------
@@ -108,6 +123,8 @@ For questions or concerns regarding these Terms, create an issue on this GitHub 
 
 Privacy Policy
 ==============
+
+Last updated: 1/8/26
 
 1. Information Collected:
 The Bot may collect and process the following information:
