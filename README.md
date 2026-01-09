@@ -9,10 +9,52 @@ Basic Usage
 
 1. ``/f`` The slash command to obtain a fractal from the Bot library
 2. ``/fract`` The slash command to compute a new fractal
+3. Use ``!info`` to get detailed information on the last fractal displayed. 
 
 Note that both of these slash commands are subject to
 constraints on the server's current computational burden and may be
-delayed or fail depending on the current load. 
+delayed or fail depending on the current load. This is particularly the
+case for ``/fract``, which can be time consuming. 
+
+Arguments to ``/fract``
+-----------------------
+
+Without any arguments, ``/fract`` generates a random fractal with random
+colors using it's own algorithm. You can specify additional arguments to 
+the ``/fract`` slash command to arbitrarily compute a fractal. 
+You can specify the coordinates of the image to be computed using 
+
+- -x0 \<left edge\>
+- -x1 \<right edge\>
+- -y0 \<bottom edge\>
+- -y1 \<top edge\>
+
+Color specifications
+--------------------
+
+You may specify colors in three different ways:
+
+- CSS4 colors with no spaces, i.e. ``-color aliceblue``, 
+- RGB colors with numbers between 0 and 1, e.g. ``-color "(0.5,0.2,0.9)"``,
+- and HTML colors, e.g. ``-color "#FFA023"``.
+
+Different fractal types handle colors differently, as explained below. 
+
+Strange attractors
+------------------
+
+Strange attractor fractals are built upon the mapping
+
+$$x \rightarrow a_1 + a_2 x + a_3 x^2 + a_4 x y + a_5 y + a_6 y^2$$
+
+$$y \rightarrow b_1 + b_2 x + b_3 x^2 + b_4 x y + b_5 y + b_6 y^2$$
+
+To compute a random strange attractor fractal, use ``-sta``. To 
+select a particular strange attractor, use ``-st`` followed by the
+12 numerical values, ``<a1> <a2> ... <a6> <b1> ... <b6>``.
+
+Two color arguments are required (any subsequent color specifications
+are ignored). Random colors will be chosen if they are not provided. 
 
 Terms of Service
 -----------------
