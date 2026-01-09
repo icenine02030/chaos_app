@@ -2,7 +2,11 @@ ChaosApp Discord Bot
 ====================
 
 This Bot is currently in public beta. Please let me know if you have any
-problems (either on Discord or via an issue here) and I will try to address them quickly. 
+problems (either on Discord or via an issue here) and I will try to address 
+them quickly. 
+
+To install, use this link:
+https://discord.com/oauth2/authorize?client_id=1444195507567071313&permissions=277025490944&integration_type=0&scope=bot+applications.commands
 
 Basic Usage
 -----------
@@ -15,6 +19,10 @@ Note that both of these slash commands are subject to
 constraints on the server's current computational burden and may be
 delayed or fail depending on the current load. This is particularly the
 case for ``/fract``, which can be time consuming. 
+
+If an image receives a positive reaction (i.e. via an emoji response)
+then that image will be more likely to be displayed in a subsequent 
+``/f`` command.
 
 Arguments to ``/fract``
 -----------------------
@@ -70,6 +78,13 @@ gives the pattern plus a ``1`` prefix. For example,
 
 Three color arguments are used (any subsequent color specifications
 are ignored). Random colors will be chosen if they are not provided.
+
+Escape-Time fractals
+--------------------
+
+To generate a random escape-time fractal, use ``-etfa``. To 
+select a particular escape time fractal, you can use the
+``-ftype`` argument. 
 
 Terms of Service
 -----------------
